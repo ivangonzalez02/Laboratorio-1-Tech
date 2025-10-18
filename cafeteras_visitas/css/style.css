@@ -1,0 +1,399 @@
+/* ===============================
+   ESTILOS GENERALES
+================================= */
+
+body {
+  
+  font-family:  "Segoe UI", Arial, sans-serif;
+  color: #2c3e50; /* tono más moderno y suave */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+
+  background-image: url("../img/fondo-finca.jpeg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.25); /* capa blanca más clara */
+  z-index: -1;
+}
+
+/* ===============================
+   ENCABEZADO
+================================= */
+header {
+    font-family: 'Cafeta', "Segoe UI", Arial, sans-serif;
+  color: #2c3e50; /* tono más moderno y suave */
+  margin: 0;
+  padding: 0;
+  min-height: 10vh;
+
+  background-image: url("../img/fondo-finca.jpeg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background: linear-gradient(90deg, #e74c3c, #c0392b); /* degradado moderno */
+  color: #fff;
+  text-align: center;
+  padding: 25px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+}
+
+/* ===============================
+   MENÚ PRINCIPAL
+================================= */
+nav {
+  background-color: #6b1e00;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 0 0 12px 12px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  display: block;
+  padding: 14px 26px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.05rem;
+  border-radius: 8px;
+  transition: background-color 0.4s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #6b1e00;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(180, 72, 0, 0.5);
+}
+
+/* Submenús */
+nav ul li ul {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background-color: #6b1e00;
+  min-width: 200px;
+  z-index: 1000;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+nav ul li:hover > ul {
+  display: block;
+  animation: fadeInDropdown 0.3s ease forwards;
+}
+
+nav ul li ul li a {
+  padding: 12px 18px;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+@keyframes fadeInDropdown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ===============================
+   SECCIONES Y FORMULARIOS
+================================= */
+section {
+  padding: 40px;
+  max-width: 900px;
+  margin: 50px auto;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.3s ease;
+}
+
+section:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+h2 {
+  text-align: center;
+  color: #8a2000;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  letter-spacing: 1.2px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+label {
+  font-weight: 600;
+  color: #34495e;
+  font-size: 1.1rem;
+}
+
+input,
+select,
+textarea {
+  padding: 14px 16px;
+  border: 1.5px solid #bdc3c7;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #27ae60;
+  box-shadow: 0 0 8px rgba(39, 174, 96, 0.4);
+}
+
+/* Botones */
+button,
+input[type="submit"] {
+  background-color: #27ae60;
+  color: white;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: background-color 0.4s ease, transform 0.3s ease;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background-color: #1e8449;
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(30, 132, 73, 0.5);
+}
+
+/* ===============================
+   TABLAS DE CONSULTAS
+================================= */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  margin-top: 25px;
+}
+
+table th,
+table td {
+  padding: 14px 20px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+table th {
+  background-color: #27ae60;
+  color: #fff;
+  border-radius: 12px 12px 0 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+table td {
+  background-color: #ecf0f1;
+  border-bottom: 12px solid transparent;
+  border-radius: 0 0 12px 12px;
+  color: #34495e;
+}
+
+table tr:hover td {
+  background-color: #d1f2eb;
+  color: #27ae60;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav ul li {
+    text-align: center;
+  }
+
+  section {
+    margin: 20px 15px;
+    padding: 30px 20px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  nav ul li a {
+    font-size: 1rem;
+    padding: 12px 16px;
+  }
+}
+
+/* ===== Modal búsqueda de cliente ===== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.modal-contenido {
+  background-color: #fff;
+  margin: 8% auto;
+  padding: 25px 30px;
+  border-radius: 15px;
+  width: 60%;
+  max-width: 600px;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease;
+}
+
+.cerrar {
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+  color: #34495e;
+  transition: color 0.3s ease;
+}
+
+.cerrar:hover {
+  color: #e74c3c;
+}
+
+#buscar {
+  width: 100%;
+  padding: 12px;
+  margin: 15px 0 20px 0;
+  border: 1.5px solid #bdc3c7;
+  border-radius: 10px;
+  font-size: 1.1rem;
+}
+
+#resultados table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#resultados th, #resultados td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+#resultados th {
+  background-color: #27ae60;
+  color: white;
+}
+
+#resultados tr:hover {
+  background-color: #d1f2eb;
+}
+/* ==================================
+   NUEVOS ESTILOS HEADER & FOOTER
+=================================== */
+
+/* Fondo personalizado para el header */
+header {
+  background-image: url("../img/Encabezado.jpeg"); /* Imagen de fondo del encabezado */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* Fondo personalizado para el footer */
+footer {
+  background-image: url("../img/pie.jpeg"); /* Imagen de fondo del pie de página */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-weight: 600;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.2);
+}
+
+/* Mini logo junto al título */
+.logo-mini {
+  width: 90px;
+  height: auto;
+  vertical-align: middle;
+  margin-left: 15px;
+}
+
+/* Ajustes opcionales para asegurar compatibilidad */
+.logo-container h1 {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
